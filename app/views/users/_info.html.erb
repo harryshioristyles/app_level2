@@ -1,0 +1,39 @@
+	<div class="sidebar-user">
+		<h2> User info</h2>
+		<table class="table table-striped">
+			<div class="profile-container">
+                <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no_image.jpg" %>
+            </div>
+			<thead>
+				<tr>
+					<th>name</th>
+					<th>introduction</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+                    <td><%= user.name %></td>
+					<td><%= user.introduction %></td>
+				</tr>
+			</tbody>
+		</table>
+	    <% if user.id == current_user.id %>
+            <p><%= link_to "プロフィール編集", edit_user_path(user), class: "edit_user_#{user.id}" %></p>
+        <% end %>
+	</div>
+ <div class="sidebar-new">
+		<h2>New book</h2>
+		<!-- form_for部分 -->
+		<%= form_for(@book) do |f| %>
+
+    		<div>Title</div>
+    		<%= f.text_field :book_name, class:"book_title" %>
+
+    		<div>Opinion</div>
+    		<%= f.text_area :caption, class:"book_body" %>
+
+    		<div><%= f.submit 'Create Book' %></div>
+
+		<% end %>
+	</div>
+</div>
