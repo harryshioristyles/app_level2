@@ -1,8 +1,12 @@
-<div class="sidebar">
+<div class="container">
+<div class="row">
+  <div class="col-xs-3">
 
-<%= render 'users/info', user: current_user %>
+    <%= render 'users/info', user: current_user %>
 
-<main>
+  </div>
+
+  <div class="col-xs-9">
 	<h2>Users</h2>
 		<table class="table table-striped">
 			<thead>
@@ -22,4 +26,6 @@
 			<% end %>
 			</tbody>
 		</table>
-</main>
+  </div>
+</div>
+</div>
