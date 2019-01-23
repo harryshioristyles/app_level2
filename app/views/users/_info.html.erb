@@ -25,6 +25,9 @@
             <%= link_to edit_user_path(user), class: "col-xs-12 glyphicon glyphicon-wrench btn btn-default btn-block edit_user_#{user.id}" do %>
               <span aria-hidden="true"></span>
             <% end %>
+        <% else %>
+              <span class="col-xs-12 glyphicon glyphicon-wrench btn btn-default btn-block" aria-hidden="true"></span>
+            <% end %>
         <% end %>
 	</div>
 
